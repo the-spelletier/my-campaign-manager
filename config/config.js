@@ -23,7 +23,6 @@ module.exports = {
     "database": DATABASE || "database_production",
     "host": DB_HOST,
     "dialect": "postgres",
-    "protocol": 'postgres',
     "dialectOptions": {
         "ssl": {
             "require": true,
