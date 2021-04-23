@@ -1,5 +1,6 @@
 # My Campaign Manager
 
 ## Setup 
-install packages
-setup .env
+- install packages
+- install PostgrSQL
+- setup .env
