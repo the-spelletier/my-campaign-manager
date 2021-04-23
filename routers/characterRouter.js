@@ -1,3 +1,4 @@
+const characterController = require('../controllers/characterController');
 
 module.exports.set = app => {
 
@@ -10,5 +11,9 @@ module.exports.set = app => {
         res.send({
             message: `${userId} ${characterId}`
         });
+    });
+
+    app.post('api/character', function (req, res) {
+        characterController.insertCharacter(req, res);
     });
 }
