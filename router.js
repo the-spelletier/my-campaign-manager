@@ -1,13 +1,10 @@
+const authRouter = require('./routers/authRouter');
+const characterRouter = require('./routers/characterRouter');
+const localizationRouter = require('./routers/localizationRouter');
 
 module.exports.set = app => {
 
-    // ENDPOINTS
-    
-    // RACINE
-    app.get('/', function (req, res) {
-        res.status(200);
-        res.send({
-            message: "Welcome to My Campaign manager!"
-        });
-    });
+    authRouter.set(app);
+    characterRouter.set(app);
+    localizationRouter.set(app);
 }
