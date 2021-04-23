@@ -1,5 +1,5 @@
 # My Campaign Manager
 
 ## Setup 
-install packages
-setup .env
+-install packages
+-setup .env
