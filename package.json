@@ -10,7 +10,9 @@
     "db:model": "npx sequelize-cli model:generate --name",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli seed:generate --name",
-    "db:seed:all": "npx sequelize-cli db:seed:all"
+    "db:seed:all": "npx sequelize-cli db:seed:all",
+    "db:reset": "npx sequelize-cli db:drop && npm run db:create && npm run db:migrate",
+    "db:reset:seed": "npm run db:reset && npm run db:seed:all"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.6.0",
     "sequelize": "^6.6.2"
   }

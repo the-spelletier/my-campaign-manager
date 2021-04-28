@@ -1,16 +1,13 @@
+const authController = require('../controllers/authController');
 
 module.exports.set = app => {
 
     // ENDPOINTS
-    app.get('/api/login', function (req, res) {
-        
-        res.status(200);
-        res.send({
-            message: `logged in`
-        });
-    });
+    app.post('/api/signin', 
+        authController.signin
+    );
 
-    app.get('/api/logout', function (req, res) {
+    app.post('/api/signout', function (req, res) {
         
         res.status(200);
         res.send({
@@ -18,7 +15,7 @@ module.exports.set = app => {
         });
     });
 
-    app.get('/api/signup', function (req, res) {
+    app.post('/api/signup', function (req, res) {
         
         res.status(200);
         res.send({
