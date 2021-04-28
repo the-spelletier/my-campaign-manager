@@ -3,6 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/the-spelletier/my-campaign-manager.git"
+	},
 	"scripts": {
 		"start": "node app.js",
 		"db:create": "npx sequelize-cli db:create",

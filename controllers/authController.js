@@ -8,7 +8,8 @@ function signin (req, res) {
             if (!result) {
                 res.status(401).send({ message: "Authentication failed" });
             } else {
-                res.send(result);
+                userService.updateUser(result);
+                res.send({token : result.token});
             }
         })
         .catch(err => {

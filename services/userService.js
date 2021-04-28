@@ -11,6 +11,12 @@ const getUser = user => {
     });
 }
 
+const updateUser = user => {
+    return User.update(
+        user, 
+        { where : { id : user.id } });
+}
+
 const authenticate = params => {
     return getUser({ 
         username: params.username 
@@ -27,15 +33,13 @@ const authenticate = params => {
             const payload = {
                 id: user.id,
                 name: user.username,
-                admin: user.isAdmin
             };
-            return {
-                token: jwt.sign(payload, settings.jwtSecret, {
-                    algorithm: settings.jwtAlgo,
-                    expiresIn: settings.ttl
-                }),
-                isAdmin: user.isAdmin
-            };
+            var result = {...user};
+            result.token = jwt.sign(payload, settings.jwtSecret, {
+                algorithm: settings.jwtAlgo,
+                expiresIn: settings.ttl
+            });
+            return result;
         }
     }).catch(err => {
         throw err;
@@ -44,5 +48,6 @@ const authenticate = params => {
 
 module.exports = {
     getUser,
+    updateUser,
     authenticate
 }
