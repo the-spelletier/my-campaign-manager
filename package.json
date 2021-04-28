@@ -10,7 +10,7 @@
 		"db:model": "npx sequelize-cli model:generate --name",
 		"db:migrate": "npx sequelize-cli db:migrate",
 		"db:seed": "npx sequelize-cli seed:generate --name",
-		"db:seed:all": "npx sequelize-cli db:seed:all",
+		"db:seed:all": "npx sequelize-cli db:seed:all && npm run db:seed",
 		"db:seed:reset": "npx sequelize-cli db:seed:undo:all",
 		"db:reset": "npx sequelize-cli db:drop && npm run db:create && npm run db:migrate",
 		"db:reset:seed": "npm run db:reset && npm run db:seed:all"
